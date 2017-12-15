@@ -1,5 +1,4 @@
 module CardConnect
-
   class Endpoint
     include Utils
 

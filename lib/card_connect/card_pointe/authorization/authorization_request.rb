@@ -1,5 +1,5 @@
 module CardConnect
-  module Service
+  module CardPointe
     class AuthorizationRequest
       include Utils
 

@@ -1,0 +1,35 @@
+PATH
+  remote: .
+  specs:
+    card_connect (0.1.0)
+      faraday (~> 0.12.1)
+      faraday_middleware (~> 0.11.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    coderay (1.1.2)
+    faraday (0.12.2)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.11.0.1)
+      faraday (>= 0.7.4, < 1.0)
+    method_source (0.9.0)
+    minitest (5.10.3)
+    multipart-post (2.0.0)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.16)
+  card_connect!
+  minitest (~> 5.0)
+  pry
+  rake (~> 10.0)
+
+BUNDLED WITH
+   1.16.0
