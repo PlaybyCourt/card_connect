@@ -1,8 +1,6 @@
 # CardConnect
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/card_connect`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+NOTE: For now this gem is in a "expiremental phase", we're working an integration with CardConnect, eventually when the core functionality is working and integrated within our systems, we are going to extend this gem and add new capabilities. Please only use it to experiment, and not for production ready projects for now.
 
 ## Installation
 
