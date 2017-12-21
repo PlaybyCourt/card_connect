@@ -8,10 +8,22 @@ require 'card_connect/endpoint'
 
 require 'card_connect/card_pointe/authorization/authorization_request'
 require 'card_connect/card_pointe/authorization/authorization_response'
+require 'card_connect/card_pointe/capture/capture_request'
+require 'card_connect/card_pointe/capture/capture_response'
+require 'card_connect/card_pointe/refund/refund_request'
+require 'card_connect/card_pointe/refund/refund_response'
+require 'card_connect/card_pointe/authorization/authorization_response'
+require 'card_connect/card_pointe/profile/profile_get_request'
+require 'card_connect/card_pointe/profile/profile_get_response'
+require 'card_connect/card_pointe/profile/profile_put_request'
+require 'card_connect/card_pointe/profile/profile_put_response'
+require 'card_connect/card_pointe/profile/profile_delete_request'
+require 'card_connect/card_pointe/profile/profile_delete_response'
 
 
 require 'card_connect/card_pointe/card_pointe_endpoint'
 require 'card_connect/card_pointe/authorization/authorization'
+require 'card_connect/card_pointe/profile/profile'
 
 module CardConnect
   class << self
