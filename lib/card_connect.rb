@@ -24,6 +24,8 @@ require 'card_connect/card_pointe/profile/profile_delete_response'
 require 'card_connect/card_pointe/card_pointe_endpoint'
 require 'card_connect/card_pointe/authorization/authorization'
 require 'card_connect/card_pointe/profile/profile'
+require 'card_connect/card_pointe/capture/capture'
+require 'card_connect/card_pointe/refund/refund'
 
 module CardConnect
   class << self
