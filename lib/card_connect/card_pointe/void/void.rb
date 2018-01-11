@@ -1,6 +1,6 @@
 module CardConnect
   module CardPointe
-    class Void < ServiceEndpoint
+    class Void < CardPointeEndpoint
       # Initializes a Void Service
       #
       # @param connection [CardConnect::Connection]
