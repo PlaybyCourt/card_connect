@@ -1,6 +1,6 @@
 module CardConnect
-  module CardPointe
-    class CardPointeEndpoint
+  module Bolt
+    class BoltEndpoint
 
       include Utils
 

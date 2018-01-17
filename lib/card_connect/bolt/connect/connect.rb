@@ -7,7 +7,7 @@ module CardConnect
       # @return CardConnect::Service::Authorization
       def initialize(connection = Connection.new.connection)
         super(connection)
-        @resource_name = '/auth'
+        @resource_name = '/connect'
         @rest_method = 'put'
       end
 
