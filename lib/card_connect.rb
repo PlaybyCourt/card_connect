@@ -3,6 +3,9 @@ require 'card_connect/version'
 require 'card_connect/utils'
 require 'card_connect/error'
 require 'card_connect/configuration'
+
+# CardPointe Endpoint
+
 require 'card_connect/card_pointe/connection'
 require 'card_connect/card_pointe/card_pointe_endpoint'
 
@@ -29,6 +32,16 @@ require 'card_connect/card_pointe/profile/profile'
 require 'card_connect/card_pointe/capture/capture'
 require 'card_connect/card_pointe/void/void'
 require 'card_connect/card_pointe/refund/refund'
+
+# Bolt Endpoint
+
+require 'card_connect/bolt/connection'
+require 'card_connect/bolt/bolt_endpoint'
+
+require 'card_connect/bolt/connect/connect_request'
+require 'card_connect/bolt/connect/connect_response'
+
+require 'card_connect/bolt/connect/connect'
 
 module CardConnect
   class << self

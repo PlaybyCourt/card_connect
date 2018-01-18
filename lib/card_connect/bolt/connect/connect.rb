@@ -1,6 +1,6 @@
 module CardConnect
-  module CardPointe
-    class Authorization < CardPointeEndpoint
+  module Bolt
+    class Connect < BoltEndpoint
       # Initializes an Authorization Service
       #
       # @param connection [CardConnect::Connection]

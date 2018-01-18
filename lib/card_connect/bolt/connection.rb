@@ -33,8 +33,8 @@ module CardConnect
             url: @config.bolt_endpoint,
             headers: {
                 user_agent: "CardConnectRubyGem/#{CardConnect::VERSION}",
-                'Authorization': @config.bolt_authorization,
-                'X-CardConnect-SessionKey': @config.bolt_session_key
+                'Authorization': (@config.bolt_authorization || ''),
+                'X-CardConnect-SessionKey': (@config.bolt_session_key || '')
             },
         }.merge(@config.connection_options)
       end

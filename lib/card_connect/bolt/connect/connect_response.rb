@@ -1,6 +1,6 @@
 module CardConnect
-  module CardPointe
-    class AuthorizationResponse
+  module Bolt
+    class ConnectResponse
       include Utils
 
       FIELDS = [:session_key, :expires].freeze
