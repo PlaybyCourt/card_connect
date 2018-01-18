@@ -34,7 +34,8 @@ module CardConnect
             headers: {
                 user_agent: "CardConnectRubyGem/#{CardConnect::VERSION}",
                 'Authorization': (@config.bolt_authorization || ''),
-                'X-CardConnect-SessionKey': (@config.bolt_session_key || '')
+                'X-CardConnect-SessionKey': (@config.bolt_session_key || ''),
+                'Content-Type': 'application/json'
             },
         }.merge(@config.connection_options)
       end

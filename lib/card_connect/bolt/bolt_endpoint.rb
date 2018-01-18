@@ -36,7 +36,7 @@ module CardConnect
       protected
 
       def base_api_path
-        '/cardconnect/rest'
+        '/api/v2'
       end
 
       def get
