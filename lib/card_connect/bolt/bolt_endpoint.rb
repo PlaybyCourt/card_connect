@@ -51,10 +51,10 @@ module CardConnect
         puts e.message
       end
 
-      def put
-        response_class.new(connection.put(path, request.payload).body)
-      rescue Faraday::ResourceNotFound => e
-        puts e.message
+      def post
+        response_class.new(connection.post(path, request.payload))
+      rescue => e
+        p e
       end
 
       def request_class
@@ -68,7 +68,6 @@ module CardConnect
       def string_to_class(str)
         str.split('::').inject(Object) { |a, e| a.const_get(e) }
       end
-
 
     end
   end

@@ -8,7 +8,7 @@ module CardConnect
       def initialize(connection = Connection.new.connection)
         super(connection)
         @resource_name = '/connect'
-        @rest_method = 'put'
+        @rest_method = 'post'
       end
 
     end

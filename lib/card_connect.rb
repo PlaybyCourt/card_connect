@@ -40,8 +40,11 @@ require 'card_connect/bolt/bolt_endpoint'
 
 require 'card_connect/bolt/connect/connect_request'
 require 'card_connect/bolt/connect/connect_response'
+require 'card_connect/bolt/disconnect/disconnect_request'
+require 'card_connect/bolt/disconnect/disconnect_response'
 
 require 'card_connect/bolt/connect/connect'
+require 'card_connect/bolt/disconnect/disconnect'
 
 module CardConnect
   class << self

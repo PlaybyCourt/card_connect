@@ -1,17 +1,28 @@
 module CardConnect
   module Bolt
     class ConnectResponse
+
       include Utils
 
-      FIELDS = [:session_key, :expires].freeze
+      attr_accessor :session_key
+      attr_accessor :expires
 
-      attr_accessor(*FIELDS)
       attr_reader :errors
 
       def initialize(response)
-        set_attributes(response, FIELDS)
+        @session_key = get_session_key(response.headers["x-cardconnect-sessionkey"])
+        @expires = get_expires(response.headers["x-cardconnect-sessionkey"])
+
         @errors = []
         process_errors
+      end
+
+      def get_session_key(session_key_string)
+        session_key_string&.split(';')&.first
+      end
+
+      def get_expires(session_key_string)
+        session_key_string&.split(';')&.last&.split('=')&.last
       end
 
       def success?
@@ -19,12 +30,10 @@ module CardConnect
       end
 
       def body
-        body = {}
-
-        body[:session_key] = headers['X-CardConnect-SessionKey']
-        body[:expires] = headers['expires']
-
-        body
+        {
+            session_key: @session_key,
+            expires: @expires
+        }
       end
 
       private

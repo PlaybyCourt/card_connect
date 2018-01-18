@@ -21,7 +21,7 @@ module CardConnect
       end
 
       def ping_server
-        connection.get('/cardconnect/rest/')
+        connection.get('/api/v2/')
       rescue Faraday::ResourceNotFound => e
         return e
       rescue Faraday::ClientError => e
