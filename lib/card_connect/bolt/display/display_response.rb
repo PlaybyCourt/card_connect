@@ -1,6 +1,6 @@
 module CardConnect
   module Bolt
-    class DisconnectResponse
+    class DisplayResponse
 
       include Utils
 

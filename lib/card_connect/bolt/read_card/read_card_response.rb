@@ -1,15 +1,18 @@
 module CardConnect
   module Bolt
-    class DisconnectResponse
+    class ReadCardResponse
 
       include Utils
 
-      attr_accessor :status
+      attr_accessor :status, :token, :expire, :signature
 
       attr_reader :errors
 
       def initialize(response)
         @status = response.status
+        @token = response.body["token"]
+        @expire = response.body["expire"]
+        @signature = response.body["signature"]
 
         @errors = []
         process_errors
@@ -20,7 +23,12 @@ module CardConnect
       end
 
       def body
-        {status: @status}
+        {
+          status: @status,
+          token: @token,
+          expire: @expire,
+          signature: @signature
+        }
       end
 
       private
