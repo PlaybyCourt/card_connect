@@ -42,9 +42,15 @@ require 'card_connect/bolt/connect/connect_request'
 require 'card_connect/bolt/connect/connect_response'
 require 'card_connect/bolt/disconnect/disconnect_request'
 require 'card_connect/bolt/disconnect/disconnect_response'
+require 'card_connect/bolt/read_card/read_card_request'
+require 'card_connect/bolt/read_card/read_card_response'
+require 'card_connect/bolt/ping/ping_request'
+require 'card_connect/bolt/ping/ping_response'
 
 require 'card_connect/bolt/connect/connect'
 require 'card_connect/bolt/disconnect/disconnect'
+require 'card_connect/bolt/read_card/read_card'
+require 'card_connect/bolt/ping/ping'
 
 module CardConnect
   class << self

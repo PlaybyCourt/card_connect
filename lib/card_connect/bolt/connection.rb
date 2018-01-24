@@ -31,6 +31,9 @@ module CardConnect
       def faraday_options
         {
             url: @config.bolt_endpoint,
+            request: {
+                timeout: 600
+            },
             headers: {
                 user_agent: "CardConnectRubyGem/#{CardConnect::VERSION}",
                 'Authorization': (@config.bolt_authorization || ''),
