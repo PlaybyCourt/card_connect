@@ -9,12 +9,8 @@ module CardConnect
       attr_accessor(*FIELDS)
       attr_reader :errors
 
-      STATUS_APPROVED = 'A'.freeze
-      STATUS_RETRY = 'B'.freeze
-      STATUS_DECLINED = 'C'.freeze
-
       def initialize(response)
-        set_attributes(response, FIELDS)
+        set_attributes(response.body, FIELDS)
         @errors = []
         process_errors
       end
@@ -34,7 +30,7 @@ module CardConnect
       private
 
       def process_errors
-        @errors << resptext if [STATUS_RETRY, STATUS_DECLINED].include?(respstat)
+        @errors << resptext if respstat != 'A'
       end
     end
   end

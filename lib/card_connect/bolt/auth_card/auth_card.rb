@@ -11,6 +11,10 @@ module CardConnect
         @rest_method = 'post'
       end
 
+      def path  
+        '/api/v3' + @resource_name
+      end
+
     end
   end
 end
