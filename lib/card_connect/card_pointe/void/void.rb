@@ -5,7 +5,7 @@ module CardConnect
       #
       # @param connection [CardConnect::Connection]
       # @return CardConnect::Service::Void
-      def initialize(connection = CardConnect.connection)
+      def initialize(connection = CardConnect.new.connection)
         super(connection)
         @resource_name = '/void'
         @rest_method = 'put'
