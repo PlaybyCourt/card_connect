@@ -5,7 +5,7 @@ module CardConnect
       #
       # @param connection [CardConnect::Connection]
       # @return CardConnect::Service::Profile
-      def initialize(rest_method = nil, connection = CardConnect.new.connection)
+      def initialize(rest_method = nil, connection = Connection.new.connection)
         super(connection)
         @resource_name = '/profile'
         @rest_method = rest_method
