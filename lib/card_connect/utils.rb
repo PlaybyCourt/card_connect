@@ -3,7 +3,14 @@ module CardConnect
     def set_attributes(attributes, fields)
       return if attributes.empty?
       attributes = attributes[0] if attributes.is_a? Array
+
+      if attributes.has_key?(:custom_fields)
+        custom_fields = attributes.delete(:custom_fields) 
+        attributes.merge!(custom_fields)
+      end
+
       attributes = symbolize_keys(attributes)
+
       fields.each do |attr|
         next unless attributes[attr]
         send("#{attr}=", attributes[attr])
