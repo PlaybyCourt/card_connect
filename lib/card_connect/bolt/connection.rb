@@ -35,7 +35,6 @@ module CardConnect
                 timeout: 600
             },
             headers: {
-                user_agent: "CardConnectRubyGem/#{CardConnect::VERSION}",
                 'Authorization': (@config.bolt_authorization || ''),
                 'X-CardConnect-SessionKey': (@config.bolt_session_key || ''),
                 'Content-Type': 'application/json'
