@@ -32,7 +32,7 @@ module CardConnect
         {
             url: @config.bolt_endpoint,
             request: {
-                timeout: 600
+                timeout: 6000
             },
             headers: {
                 'Authorization': (@config.bolt_authorization || ''),
