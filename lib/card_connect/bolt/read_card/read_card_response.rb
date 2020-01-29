@@ -4,16 +4,17 @@ module CardConnect
 
       include Utils
 
-      attr_accessor :status, :token, :expire, :signature
+      attr_accessor :status, :name, :token, :expiry, :signature, :single_user_token
 
       attr_reader :errors
 
       def initialize(response)
         @status = response.status
+        @name = response["name"]
         @token = response.body["token"]
-        @expire = response.body["expire"]
+        @expiry = response.body["expiry"]
         @signature = response.body["signature"]
-
+        @single_use_token = response["singleUseToken"]
         @errors = []
         process_errors
       end
@@ -24,9 +25,11 @@ module CardConnect
 
       def body
         {
+          name: @name,
           status: @status,
           token: @token,
-          expire: @expire,
+          expiry: @expiry,
+          single_use_token: @single_use_token,
           signature: @signature
         }
       end
