@@ -4,7 +4,7 @@ module CardConnect
       include Utils
 
       REQUIRED_FIELDS = [:merchantId, :hsn, :amount]
-      OPTIONAL_FIELDS = [:includeSignature, :includeAmountDisplay, :includePIN, :beep, :aid].freeze
+      OPTIONAL_FIELDS = [:includeSignature, :includeAmountDisplay, :includePIN, :beep, :aid, :userFields].freeze
 
       FIELDS = REQUIRED_FIELDS + OPTIONAL_FIELDS
 
