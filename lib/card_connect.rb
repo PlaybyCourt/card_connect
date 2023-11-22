@@ -52,6 +52,8 @@ require 'card_connect/bolt/display/display_request'
 require 'card_connect/bolt/display/display_response'
 require 'card_connect/bolt/auth_card/auth_card_request'
 require 'card_connect/bolt/auth_card/auth_card_response'
+require 'card_connect/bolt/tip/tip_request'
+require 'card_connect/bolt/tip/tip_response'
 
 require 'card_connect/bolt/connect/connect'
 require 'card_connect/bolt/disconnect/disconnect'
@@ -60,6 +62,7 @@ require 'card_connect/bolt/read_card/read_card'
 require 'card_connect/bolt/ping/ping'
 require 'card_connect/bolt/display/display'
 require 'card_connect/bolt/auth_card/auth_card'
+require 'card_connect/bolt/tip/tip'
 
 module CardConnect
   class << self
