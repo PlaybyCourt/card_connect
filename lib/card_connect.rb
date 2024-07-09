@@ -33,6 +33,10 @@ require 'card_connect/card_pointe/capture/capture'
 require 'card_connect/card_pointe/void/void'
 require 'card_connect/card_pointe/refund/refund'
 
+require 'card_connect/card_pointe/inquire/inquire_request'
+require 'card_connect/card_pointe/inquire/inquire_response'
+require 'card_connect/card_pointe/inquire/inquire'
+
 # Bolt Endpoint
 
 require 'card_connect/bolt/connection'

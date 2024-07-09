@@ -4,11 +4,12 @@ module CardConnect
       include Utils
 
       REQUIRED_FIELDS = [:merchid, :account, :expiry, :amount, :currency].freeze
+      REQUIRED_FIELDS_FOR_ACH = [:merchid, :account, :accttype, :amount, :name].freeze
 
       OPTIONAL_FIELDS = [:accttype, :name, :address, :city, :region, :country, :phone,
                          :postal, :email, :ecomind, :cvv2, :orderid, :track, :bankaba,
                          :tokenize, :termid, :capture, :ssnl4, :license, :profile, :userfields,
-                         :ponumber, :authcode, :invoiceid, :taxamnt].freeze
+                         :ponumber, :authcode, :invoiceid, :taxamnt, :achDescription].freeze
 
       FIELDS = REQUIRED_FIELDS + OPTIONAL_FIELDS
 
@@ -41,8 +42,17 @@ module CardConnect
 
       private
 
+      # Determines if the request is an ACH request
+      # ESAV and ECHK are the only valid values for ACH requests
+      # ESAV - Savings Account | ECHK - Checking Account
+      def ach_request?
+        %w[ESAV ECHK].include?(accttype)
+      end
+
       def validate_required_fields
-        REQUIRED_FIELDS.each do |field|
+        required_fields = ach_request? ? REQUIRED_FIELDS_FOR_ACH : REQUIRED_FIELDS
+
+        required_fields.each do |field|
           value = send(field)
           value.nil? || value.empty? ? errors.push("#{field.capitalize} is missing") : next
         end
