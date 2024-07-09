@@ -16,8 +16,8 @@ module CardConnect
       # @return CardConnect::InquireRequest
       def initialize(attrs = {})
         @errors = []
-        validate_required_fields
         set_attributes(attrs, FIELDS)
+        validate_required_fields
       end
 
       # Indicates that the request is valid once it is built.
