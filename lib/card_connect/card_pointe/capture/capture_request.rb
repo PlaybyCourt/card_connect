@@ -6,7 +6,7 @@ module CardConnect
       REQUIRED_FIELDS = [:merchid, :retref].freeze
 
       OPTIONAL_FIELDS = [:authcode, :amount, :invoiceid, :ponumber, :taxamnt, :cof,
-                         :cofpermission, :confscheduled, :ecomind].freeze
+                         :cofpermission, :cofscheduled, :ecomind].freeze
 
       FIELDS = REQUIRED_FIELDS + OPTIONAL_FIELDS
 

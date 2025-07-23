@@ -10,7 +10,7 @@ module CardConnect
                          :postal, :email, :ecomind, :cvv2, :orderid, :track, :bankaba,
                          :tokenize, :termid, :capture, :ssnl4, :license, :profile, :userfields,
                          :ponumber, :authcode, :invoiceid, :taxamnt, :achDescription, :cof,
-                         :cofpermission, :confscheduled].freeze
+                         :cofpermission, :cofscheduled].freeze
 
       FIELDS = REQUIRED_FIELDS + OPTIONAL_FIELDS
 
