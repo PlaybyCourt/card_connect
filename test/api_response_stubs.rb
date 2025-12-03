@@ -145,3 +145,87 @@ def valid_profile_put_response
     'acctid' => '1'
   }
 end
+
+# Bolt Response Stubs
+# Bolt responses receive the full Faraday response object
+
+# Mock Faraday Response for Bolt tests
+class MockFaradayResponse
+  attr_accessor :status, :body, :headers
+
+  def initialize(status: 200, body: {}, headers: {})
+    @status = status
+    @body = body
+    @headers = headers
+  end
+end
+
+def valid_bolt_auth_card_response
+  MockFaradayResponse.new(
+    status: 200,
+    body: {
+      'token' => '9419786452781111',
+      'expiry' => '1225',
+      'signature' => nil,
+      'name' => 'TOM JONES',
+      'batchid' => '71742042',
+      'retref' => '343005123105',
+      'avsresp' => '9',
+      'respproc' => 'FNOR',
+      'amount' => '100',
+      'resptext' => 'Approved',
+      'authcode' => '046221',
+      'respcode' => '00',
+      'merchid' => '000000927996',
+      'cvvresp' => 'M',
+      'respstat' => 'A'
+    }
+  )
+end
+
+def valid_bolt_connect_response
+  MockFaradayResponse.new(
+    status: 200,
+    body: {},
+    headers: {
+      'x-cardconnect-sessionkey' => 'abc123sessionkey;expires=3600'
+    }
+  )
+end
+
+def valid_bolt_disconnect_response
+  MockFaradayResponse.new(status: 200, body: {})
+end
+
+def valid_bolt_ping_response
+  MockFaradayResponse.new(
+    status: 200,
+    body: { 'connected' => true }
+  )
+end
+
+def valid_bolt_read_card_response
+  MockFaradayResponse.new(
+    status: 200,
+    body: {
+      'token' => '9419786452781111',
+      'expiry' => '1225',
+      'name' => 'TOM JONES'
+    }
+  )
+end
+
+def valid_bolt_display_response
+  MockFaradayResponse.new(status: 200, body: {})
+end
+
+def valid_bolt_cancel_response
+  MockFaradayResponse.new(status: 200, body: {})
+end
+
+def valid_bolt_tip_response
+  MockFaradayResponse.new(
+    status: 200,
+    body: { 'tip' => '5.00' }
+  )
+end
