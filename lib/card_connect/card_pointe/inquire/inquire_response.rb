@@ -11,13 +11,15 @@ module CardConnect
       ].freeze
 
       attr_accessor(*FIELDS)
+      attr_reader :errors
 
       def initialize(response)
         set_attributes(response, FIELDS)
+        @errors = []
       end
 
       def success?
-        errors.empty?
+        @errors.empty?
       end
 
       def body

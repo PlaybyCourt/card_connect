@@ -5,7 +5,8 @@ class CardConnectTest < Minitest::Test
     refute_nil ::CardConnect::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
+  def test_it_has_configuration
+    assert_respond_to CardConnect, :configure
+    assert_respond_to CardConnect, :configuration
   end
 end
