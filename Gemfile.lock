@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    card_connect (0.3.0)
+    card_connect (0.4.0)
       faraday (~> 2.7)
 
 GEM

@@ -36,6 +36,31 @@ def valid_capture_response
   }
 end
 
+def valid_bin_response
+  {
+    'country' => 'USA',
+    'product' => 'V',
+    'bin' => '400552',
+    'cardusestring' => 'True credit, No PIN/Signature capability',
+    'gsa' => false,
+    'corporate' => false,
+    'fsa' => false,
+    'subtype' => 'Visa Traditional',
+    'purchase' => false,
+    'prepaid' => false,
+    'issuer' => 'TEST ISSUER',
+    'binlo' => '400552XXX',
+    'binhi' => '400552XXX'
+  }
+end
+
+def empty_bin_response
+  {
+    'success' => true,
+    'errormsg' => 'No bin information found'
+  }
+end
+
 def valid_inquire_response
   {
     'amount' => '596.00',

@@ -37,6 +37,10 @@ require 'card_connect/card_pointe/inquire/inquire_request'
 require 'card_connect/card_pointe/inquire/inquire_response'
 require 'card_connect/card_pointe/inquire/inquire'
 
+require 'card_connect/card_pointe/bin/bin_request'
+require 'card_connect/card_pointe/bin/bin_response'
+require 'card_connect/card_pointe/bin/bin'
+
 # Bolt Endpoint
 
 require 'card_connect/bolt/connection'
