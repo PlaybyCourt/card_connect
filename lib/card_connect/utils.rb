@@ -12,7 +12,9 @@ module CardConnect
       attributes = symbolize_keys(attributes)
 
       fields.each do |attr|
-        next unless attributes[attr]
+        # Use key? so legitimate false / nil values get assigned;
+        # previously `unless attributes[attr]` silently dropped them.
+        next unless attributes.key?(attr)
         send("#{attr}=", attributes[attr])
       end
     end
